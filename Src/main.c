@@ -91,8 +91,10 @@ void SystemClock_Config(void);
 int main(void)
 {
   /* USER CODE BEGIN 1 */
+	/*Se declara un apuntador para un objeto de tipo MAX6675*/
 	MAX6675_Typedef* MAX6675;
 
+	/*Se crea el objeto con la funcion MAX6675_Create() y se almacena en el apuntador*/
 	MAX6675 = MAX6675_Create();
   /* USER CODE END 1 */
 
@@ -118,7 +120,6 @@ int main(void)
   MX_I2C2_Init();
   MX_SPI3_Init();
   /* USER CODE BEGIN 2 */
-  HAL_Delay(2000);
 
   /* USER CODE END 2 */
 
@@ -126,7 +127,7 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-//	  MAX6675_1->MAX6675_getValue(MAX6675_1);
+	  /*Con la función getTemp se obtiene la temperatura en grados centigrados*/
 	  MAX6675->MAX6675_getTemp(MAX6675);
 	  HAL_Delay(100);
     /* USER CODE END WHILE */

@@ -1,7 +1,7 @@
-MAX6675.c:21:7:MAX6675_getTemp	8	static
-MAX6675.c:27:6:MAX6675_getState	0	static
+MAX6675.c:23:7:MAX6675_getTemp	8	static
+MAX6675.c:30:6:MAX6675_getState	0	static
 MAX6675.c:10:10:MAX6675_getValue	16	static
-MAX6675.c:32:6:MAX6675_Init	12	static
-MAX6675.c:46:18:MAX6675_Create	8	static
-MAX6675.c:57:6:MAX6675_Cleanup	0	static
-MAX6675.c:62:6:MAX6675_Destroy	0	static
+MAX6675.c:35:6:MAX6675_Init	12	static
+MAX6675.c:49:18:MAX6675_Create	8	static
+MAX6675.c:60:6:MAX6675_Cleanup	0	static
+MAX6675.c:65:6:MAX6675_Destroy	0	static

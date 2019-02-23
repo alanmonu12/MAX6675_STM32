@@ -9,10 +9,12 @@
 
 uint16_t MAX6675_getValue(MAX6675_Typedef* const sensor)
 {
-	uint8_t buffer[2];
-	HAL_SPI_Receive(&hspi3,buffer,1,100);
+	uint8_t buffer[BUFFER_SIZE];
+
+	HAL_SPI_Receive(&MAX6675_SPI,buffer,1,HAL_MAX_DELAY);
 
 	sensor->Value = buffer[1] << 8 | buffer[0];
+
 	sensor->Value = sensor->Value >> 3;
 
 	return sensor->Value;
@@ -20,7 +22,8 @@ uint16_t MAX6675_getValue(MAX6675_Typedef* const sensor)
 
 float MAX6675_getTemp(MAX6675_Typedef* const sensor)
 {
-	sensor->Temp_C = (sensor->MAX6675_getValue(sensor) * 1024)/4095;
+	sensor->Temp_C = (sensor->MAX6675_getValue(sensor) * MAX_TEMP)/MAX6675_RESOLUTION;
+
 	return sensor->Temp_C;
 }
 
